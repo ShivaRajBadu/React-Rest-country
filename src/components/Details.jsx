@@ -1,22 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 export const Details = ({ datas, theme }) => {
-  const [country, setCountry] = useState([]);
   let navigate = useNavigate();
   let params = useParams();
 
   const handleBorderClick = (border) => {
     const data = datas.filter((data) => data.fifa === border);
+    console.log(data);
   };
   const data = datas.filter((data) => data.name.common === params.name);
 
   const native = Object.keys(data[0].name.nativeName)[0];
 
   const currency = Object.keys(data[0].currencies)[0];
-  console.log(currency);
-
-  console.log(data);
 
   return (
     <div className="details">
