@@ -1,38 +1,365 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200;1,300&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --darkBlueD: hsl(209, 23%, 22%);
+  --VeryDarkBlueD: hsl(207, 26%, 17%);
+  --VeryDarkBlueL: hsl(200, 15%, 8%);
+  --DarkGrayL: hsl(0, 0%, 52%);
+  --VeryLightGrayL: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+.container_dark {
+  color: var(--White);
+  background-color: var(--VeryDarkBlueD);
+}
+.container_light {
+  background-color: rgb(245, 241, 241);
+  color: black;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--darkBlueD);
+  box-shadow: 0px 0px 5px 0px hsl(210, 24%, 13%);
+  padding: 1em 2.5em;
+  color: var(--White);
+}
+.navbar_light {
+  background-color: var(--VeryLightGrayL);
+  color: black;
+}
+.navbar h1 {
+  font-family: "Poppins";
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+.input_area {
+  max-width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search_button {
+  display: inline;
+  width: 30px;
+  height: 47px;
+  border: none;
+  background-color: var(--darkBlueD);
+  color: #fff;
+  border-radius: 5px 0 0 5px;
+  font-size: 1.2rem;
+  padding: 0 1.5rem;
+}
+.search_button i {
+  opacity: 0.6;
+}
+.search_btn_light {
+  display: inline;
+  width: 30px;
+  height: 47px;
+  border: none;
+  background-color: #fff;
+  color: black;
+  border-radius: 5px 0 0 5px;
+  font-size: 1.2rem;
+  padding: 0 1.5rem;
+}
+
+.input {
+  color: #fff;
+  width: 400px;
+  font-size: 1rem;
+  border: 1px solid #555;
+  display: block;
+  padding: 0.9rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0px 5px 5px 0px;
+  margin-bottom: 1rem;
+  background: var(--darkBlueD);
+}
+.input_light {
+  color: #000;
+  width: 400px;
+  font-size: 1rem;
+  border: 1px solid #555;
+  display: block;
+  padding: 0.9rem 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0px 5px 5px 0px;
+  margin-bottom: 1rem;
+  background: #ffff;
+}
+.input_area form {
+  display: flex;
+}
+.input_area input::placeholder {
+  font-weight: 100;
+  opacity: 0.7;
+}
+.mode-toggle {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dropdown-btn {
+  color: #fff;
+  padding: 0.9rem 1rem;
+  font-weight: 500;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  background-color: var(--darkBlueD);
+  border: none;
+  position: relative;
+}
+.dropdown_light {
+  background-color: #ffff;
+  color: black;
+}
+.dropdown-content {
+  position: absolute;
+  display: none;
+  cursor: pointer;
+  margin-top: 0.3rem;
+  border-radius: 5px;
+  background-color: var(--darkBlueD);
+  padding: 1rem 1.5rem 1rem 1rem;
+  width: 152px;
+}
+.dropdown-content ul {
+  padding: 0;
+}
+.show {
+  display: block;
+}
+.dropdown-content li {
+  padding: 0.1rem 0;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.country {
+  display: grid;
+  max-width: 90%;
+  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  text-align: start;
+}
+.country img {
+  display: block;
+  max-width: 200px;
+
+  margin: auto;
+}
+.country_details {
+  max-width: 200px;
+}
+.country_info {
+  padding: 1rem;
+  background-color: var(--darkBlueD);
+}
+.country_info_light {
+  background: #ffff;
+  padding: 1rem;
+}
+.country_name {
+  padding: 0.3rem 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.country_population {
+  padding: 0.1rem 0;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+.country_population span {
+  font-weight: 300;
+  padding-left: 0.3rem;
+}
+.total_country {
   text-align: center;
+  padding: 1rem;
+  background: var(--darkBlueD);
+  margin: 1rem 0;
+  box-shadow: 0px 1px 2px 0 rgb(30, 43, 48);
+}
+.total_country_light {
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem;
+  background: #fff;
+  color: black;
+  margin: 1rem 0;
+}
+.region {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  opacity: 0.8;
+}
+.region span {
+  font-weight: 300;
+  padding-left: 0.3rem;
+
+  opacity: 0.8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.capital {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  opacity: 0.8;
+}
+.capital span {
+  font-weight: 300;
+  padding-left: 0.3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.details {
+  max-width: 90%;
+  margin: 2rem auto;
+  height: 100vh;
 }
+.back_btn {
+  background-color: var(--darkBlueD);
+  border: none;
+  outline: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+  color: var(--White);
+  opacity: 0.9;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+.back_btn_light {
+  background-color: #fff;
+  color: #000;
+}
+.back_btn i {
+  padding-right: 0.6rem;
+}
+.details_show {
+  display: flex;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  margin-top: 2rem;
+}
+.details_show img {
+  display: block;
+  width: 500px;
+  height: 400px;
+}
+.country_detail {
   display: flex;
   flex-direction: column;
+  margin-left: 6rem;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.country_detail h1 {
+  padding: 1rem 0;
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+}
+.country_detail_2 {
+  margin-left: 3rem;
+}
+.country_detail p {
+  padding: 0.3rem 0;
+  font-weight: 600;
+  opacity: 0.9;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+.country_detail span {
+  opacity: 0.7;
+}
+.border_Country {
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+}
+.border_Country h3 {
+  padding: 0.7rem;
+  padding-left: 0;
+}
+.border_Country p {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--darkBlueD);
+  background-color: var(--darkBlueD);
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+.border_Country_light p {
+  padding: 0.5rem 0.8rem;
+
+  background-color: #fff;
+  margin-left: 1rem;
+  border-radius: 5px;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.spinner {
+  height: 100vh;
+  margin-top: 3rem;
+}
+.spinner_img {
+  display: block;
+  margin-top: 2rem;
+}
+.pagination {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  padding-top: 1.8rem;
+  padding-bottom: 2rem;
 }
-
-.App-link {
-  color: #61dafb;
+.page-item {
+  background-color: hsla(210, 21%, 5%, 0.541);
+  margin-right: 0.5em;
+  padding: 0.2rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.page_link {
+  padding: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
