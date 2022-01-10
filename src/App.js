@@ -24,7 +24,7 @@ function App() {
   }, []);
   const handleChange = async (e, value, setValue) => {
     e.preventDefault();
-    const country = datas.filter((data) => data.name.common == value);
+    const country = datas.filter((data) => data.name.common === value);
     setDatas(country);
     // const response = await axios.get(
     //   `https://restcountries.com/v3.1/name/${value}`
